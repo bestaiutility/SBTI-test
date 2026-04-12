@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SBTI和MBTI有什么区别 - 在线测试前先看这篇</title>
+  <meta name="description" content="SBTI和MBTI有什么区别？这篇文章用更直白的方式解释两者在风格、表达、测试体验和结果呈现上的不同，并附上SBTI测试入口。" />
+  <meta name="keywords" content="SBTI和MBTI区别,SBTI是什么,MBTI是什么,SBTI测试,MBTI测试" />
+  <link rel="canonical" href="https://ailink123.com/sbti-vs-mbti.html" />
+
+  <style>
+    :root {
+      --bg: #f6faf6;
+      --panel: #ffffff;
+      --text: #1e2a22;
+      --muted: #6b6477;
+      --line: #dbe8dd;
+      --soft: #edf6ef;
+      --accent: #6c8d71;
+      --accent-strong: #9746e1;
+      --shadow: 0 16px 40px rgba(47, 73, 55, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, #f8fff8 0, #f6faf6 36%, #f2f7f3 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 32px 28px;
+      margin-top: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -56px;
+      top: -56px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(151, 70, 225, 0.14), rgba(151, 70, 225, 0.03));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--accent-strong);
+      border: 1px solid #eadcfb;
+      background: #f7f1ff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .sub {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-weight: 700;
+      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent-strong);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 12px 30px rgba(151, 70, 225, 0.16);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--accent-strong);
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 24px;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .content p {
+      color: #47584b;
+      font-size: 15px;
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .compare-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      background: linear-gradient(180deg, #ffffff, #fbfdfb);
+    }
+
+    .compare-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .compare-card p {
+      color: #516154;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .tips-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .tip-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff, #fbfdfb);
+    }
+
+    .tip-item strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .tip-item p {
+      color: #526255;
+      font-size: 14px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .cta-box {
+      border: 1px solid #eadcfb;
+      border-radius: 22px;
+      padding: 22px;
+      background: linear-gradient(180deg, #fff, #faf5ff);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .inner-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .inner-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--accent-strong);
+      font-weight: 700;
+      transition: all .16s ease;
+    }
+
+    .inner-links a:hover {
+      transform: translateY(-1px);
+      background: #f8f4fd;
+    }
+
+    .footer {
+      margin-top: 22px;
+      text-align: center;
+      color: #7c887f;
+      font-size: 12px;
+      line-height: 1.9;
+      padding: 8px 10px 0;
+    }
+
+    .footer p {
+      margin: 0 0 8px;
+    }
+
+    @media (max-width: 760px) {
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .shell {
+        padding: 14px 12px 42px;
+      }
+
+      .hero,
+      .section {
+        padding: 18px 16px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .section-head h2,
+      .cta-box h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero card">
+      <div class="eyebrow">SBTI说明页 · 搜索入口页</div>
+      <h1>SBTI和MBTI有什么区别？</h1>
+      <p class="sub">
+        很多人第一次看到 SBTI，第一反应都是：这是不是另一种 MBTI？
+        其实两者有相似的地方，但在表达方式、测试体验和结果呈现上，差别还挺明显。
+      </p>
+
+      <div class="hero-actions">
+        <a href="/index.html" class="btn btn-primary">进入 SBTI 测试首页</a>
+        <a href="/types/index.html" class="btn btn-secondary">查看 SBTI 人格类型</a>
+      </div>
+    </section>
+
+    <section class="section card">
+      <div class="section-head">
+        <h2>先说结论</h2>
+        <p>如果你只是想快速理解它们的差别，看这一段就够了。</p>
+      </div>
+
+      <div class="content">
+        <p>
+          MBTI 更像一种被很多人熟知的经典人格分类框架，表达方式相对标准化，大家常见的是
+          INTJ、ENFP、ISTP 这一类四字母结果。
+        </p>
+        <p>
+          SBTI 则更像一种娱乐向、表达更直接的人格测试形式。它没有走那种很“学院派”的命名路线，
+          而是用了更有记忆点、更接地气、也更容易传播的人格名称，比如 CTRL、BOSS、THIN-K、MUM 这种。
+        </p>
+        <p>
+          所以最直白地说：<strong>SBTI 不是简单复制 MBTI</strong>，它更像是换了一种更轻、更有梗、更适合普通用户参与和分享的表达方式。
+        </p>
+      </div>
+    </section>
+
+    <section class="section card">
+      <div class="section-head">
+        <h2>SBTI 和 MBTI 的主要区别</h2>
+        <p>你可以把它们理解成“风格不同的两种人格测试体验”。</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-card">
+          <h3>1. 命名方式不同</h3>
+          <p>
+            MBTI 更偏标准化，用四个字母来组合人格类型；SBTI 更偏内容化和传播化，
+            会直接给人格一个更容易被记住的名字。
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <h3>2. 表达风格不同</h3>
+          <p>
+            MBTI 的表达通常更中性、更结构化；SBTI 的表达会更直接、更口语化，
+            有时还会带一点调侃和娱乐感。
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <h3>3. 测试体验不同</h3>
+          <p>
+            MBTI 常给人一种“在做正式测试”的感觉；SBTI 更像是在做一个轻量、快速、
+            更适合社交传播的人格小测试。
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <h3>4. 结果呈现不同</h3>
+          <p>
+            MBTI 更重“类型归类”；SBTI 除了给人格结果，还可以结合维度评分、
+            风格描述和更直观的解释来呈现。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <div class="section-head">
+        <h2>那 SBTI 适合什么人？</h2>
+        <p>如果你对测试体验的要求是“更轻松、更快、更有趣”，那它会更适合你。</p>
+      </div>
+
+      <div class="tips-list">
+        <div class="tip-item">
+          <strong>适合想快速了解自己的人</strong>
+          <p>
+            不想先看一大堆定义，也不想研究复杂理论，直接做题、直接出结果，这类用户会更喜欢 SBTI。
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <strong>适合更看重表达感和分享感的人</strong>
+          <p>
+            相比纯字母类型，像 CTRL、BOSS、MUM 这种名字更容易记，也更容易拿去和朋友讨论。
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <strong>适合把它当作娱乐参考的人</strong>
+          <p>
+            SBTI 更适合拿来做自我观察、社交讨论和轻度参考，而不是把它当成很严格的专业结论。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <div class="section-head">
+        <h2>那 MBTI 呢？</h2>
+        <p>MBTI 依然有自己的价值，只是体验方向不一样。</p>
+      </div>
+
+      <div class="content">
+        <p>
+          如果你更喜欢标准化标签、更希望用一个大家都熟悉的体系来理解人格，那 MBTI 会更符合你的习惯。
+        </p>
+        <p>
+          但如果你更看重测试过程的轻松程度、结果的可读性，以及页面本身的趣味性和传播性，
+          那么 SBTI 可能会更吸引你。
+        </p>
+        <p>
+          说到底，它们不是一定要二选一，更像是两种不同风格的人格测试体验。
+        </p>
+      </div>
+    </section>
+
+    <section class="section card">
+      <div class="cta-box">
+        <h2>想看自己更像哪一种？</h2>
+        <p>
+          解释看再多，不如自己直接测一次。你可以回到首页，几分钟内拿到自己的
+          SBTI 人格结果和维度分析。
+        </p>
+
+        <div class="hero-actions" style="margin-top:0;">
+          <a href="/index.html" class="btn btn-primary">立即开始 SBTI 测试</a>
+          <a href="/types/index.html" class="btn btn-secondary">先看全部人格类型</a>
+        </div>
+
+        <div class="inner-links">
+          <a href="/types/ctrl.html">查看 CTRL 人格解析</a>
+          <a href="/types/boss.html">查看 BOSS 人格解析</a>
+          <a href="/types/thin-k.html">查看 THIN-K 人格解析</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>本页用于解释 SBTI 与 MBTI 的体验差异，内容仅供娱乐参考。</p>
+      <p>如果你想看具体结果，建议直接回到首页完成测试。</p>
+    </div>
+  </div>
+</body>
+</html>
