@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI人格类型大全 - 查看全部SBTI人格说明</title>
+  <meta name="description" content="查看 SBTI 人格类型大全，了解不同人格的性格特点、行为风格、社交倾向与简单解读，并返回首页参与免费在线测试。" />
+  <meta name="keywords" content="SBTI人格类型,SBTI人格大全,SBTI人格说明,SBTI性格类型" />
+  <link rel="canonical" href="https://ailink123.com/types/" />
+
+  <style>
+    :root {
+      --bg: #f6faf6;
+      --panel: #ffffff;
+      --text: #1e2a22;
+      --muted: #6b6477;
+      --line: #dbe8dd;
+      --soft: #edf6ef;
+      --accent: #6c8d71;
+      --accent-strong: #9746e1;
+      --shadow: 0 16px 40px rgba(47, 73, 55, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, #f8fff8 0, #f6faf6 36%, #f2f7f3 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 30px;
+      margin-top: 16px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      top: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(151, 70, 225, 0.14), rgba(151, 70, 225, 0.03));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--accent-strong);
+      border: 1px solid #eadcfb;
+      background: #f7f1ff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .sub {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-weight: 700;
+      transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease;
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent-strong);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 12px 30px rgba(151, 70, 225, 0.16);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--accent-strong);
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 24px;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--accent-strong);
+      font-size: 14px;
+      font-weight: 700;
+      transition: all .16s ease;
+    }
+
+    .quick-links a:hover {
+      transform: translateY(-1px);
+      background: #f8f4fd;
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .type-card {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff, #fbfdfb);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      min-height: 220px;
+    }
+
+    .type-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(47, 73, 55, 0.08);
+      border-color: #c9d9cd;
+    }
+
+    .type-code {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent-strong);
+      line-height: 1.1;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .type-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .type-desc {
+      color: #516154;
+      font-size: 14px;
+      line-height: 1.82;
+    }
+
+    .type-tag {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid #eadcfb;
+      background: #f8f3ff;
+      color: var(--accent-strong);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .note-box {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff, #fbfdfb);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .bottom-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .bottom-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--accent-strong);
+      font-weight: 700;
+      transition: all .16s ease;
+    }
+
+    .bottom-links a:hover {
+      transform: translateY(-1px);
+      background: #f8f4fd;
+    }
+
+    .footer {
+      margin-top: 22px;
+      text-align: center;
+      color: #7c887f;
+      font-size: 12px;
+      line-height: 1.9;
+      padding: 8px 10px 0;
+    }
+
+    .footer p {
+      margin: 0 0 8px;
+    }
+
+    @media (max-width: 980px) {
+      .type-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        padding: 14px 12px 42px;
+      }
+
+      .hero,
+      .section {
+        padding: 18px 16px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .type-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero card">
+      <div class="eyebrow">SBTI 类型总览 · 内链导航页</div>
+      <h1>SBTI人格类型大全</h1>
+      <p class="sub">
+        这里整理了常见的 SBTI 人格类型说明。你可以先浏览不同人格的整体风格，
+        再进入具体页面查看更详细的解读；如果还没测试，也可以直接回到首页开始答题。
+      </p>
+
+      <div class="hero-actions">
+        <a href="/index.html" class="btn btn-primary">返回测试首页</a>
+        <a href="/sbti-vs-mbti.html" class="btn btn-secondary">查看 SBTI 和 MBTI 的区别</a>
+      </div>
+
+      <div class="quick-links">
+        <a href="#popular">热门人格</a>
+        <a href="#all-types">全部人格</a>
+        <a href="/types/ctrl.html">CTRL 详情</a>
+        <a href="/types/boss.html">BOSS 详情</a>
+        <a href="/types/thin-k.html">THIN-K 详情</a>
+        <a href="/types/mum.html">MUM 详情</a>
+      </div>
+    </section>
+
+    <section id="popular" class="section card">
+      <div class="section-head">
+        <h2>热门人格</h2>
+        <p>可以先从这几个更容易被用户点击和理解的人格页面开始做详情页。</p>
+      </div>
+
+      <div class="type-grid">
+        <a class="type-card" href="/types/ctrl.html">
+          <div class="type-code">CTRL</div>
+          <div class="type-name">拿捏者</div>
+          <div class="type-desc">
+            做事更有掌控感，面对混乱时容易主动接手，推进意识强，执行风格偏利落。
+          </div>
+          <div class="type-tag">优先做详情页</div>
+        </a>
+
+        <a class="type-card" href="/types/boss.html">
+          <div class="type-code">BOSS</div>
+          <div class="type-name">领导者</div>
+          <div class="type-desc">
+            目标导向明显，更强调效率、秩序和结果，往往带着比较强的上行动力。
+          </div>
+          <div class="type-tag">优先做详情页</div>
+        </a>
+
+        <a class="type-card" href="/types/thin-k.html">
+          <div class="type-code">THIN-K</div>
+          <div class="type-name">思考者</div>
+          <div class="type-desc">
+            更看重逻辑、推理和判断，不太轻易被带节奏，喜欢把事情想清楚再下结论。
+          </div>
+          <div class="type-tag">优先做详情页</div>
+        </a>
+
+        <a class="type-card" href="/types/mum.html">
+          <div class="type-code">MUM</div>
+          <div class="type-name">妈妈</div>
+          <div class="type-desc">
+            情绪感知比较强，也更容易照顾别人，常给人温和、可靠、会共情的感觉。
+          </div>
+          <div class="type-tag">优先做详情页</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="all-types" class="section card">
+      <div class="section-head">
+        <h2>全部人格类型</h2>
+        <p>先用总览把站内结构撑起来，后面可以逐个补详情页内容。</p>
+      </div>
+
+      <div class="type-grid">
+        <a class="type-card" href="/types/ctrl.html">
+          <div class="type-code">CTRL</div>
+          <div class="type-name">拿捏者</div>
+          <div class="type-desc">擅长掌控节奏，推进力强，偏结果导向。</div>
+        </a>
+
+        <a class="type-card" href="/types/boss.html">
+          <div class="type-code">BOSS</div>
+          <div class="type-name">领导者</div>
+          <div class="type-desc">秩序感强，目标感强，喜欢往上突破。</div>
+        </a>
+
+        <a class="type-card" href="/types/thin-k.html">
+          <div class="type-code">THIN-K</div>
+          <div class="type-name">思考者</div>
+          <div class="type-desc">逻辑优先，重视判断和信息筛选。</div>
+        </a>
+
+        <a class="type-card" href="/types/mum.html">
+          <div class="type-code">MUM</div>
+          <div class="type-name">妈妈</div>
+          <div class="type-desc">温和、共情力强，更照顾关系和情绪。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">OJBK</div>
+          <div class="type-name">无所谓人</div>
+          <div class="type-desc">对很多事都不太执着，更追求轻松随意。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">SHIT</div>
+          <div class="type-name">愤世者</div>
+          <div class="type-desc">嘴上嫌弃世界，手上仍旧在默默收拾残局。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">GOGO</div>
+          <div class="type-name">行者</div>
+          <div class="type-desc">行动意愿强，事情到了手上就想快点推进。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">MONK</div>
+          <div class="type-name">僧人</div>
+          <div class="type-desc">边界感更强，偏独处，讨厌被打扰节奏。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">LOVE-R</div>
+          <div class="type-name">多情者</div>
+          <div class="type-desc">情绪投入高，容易认真，也更容易沉浸关系。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">FAKE</div>
+          <div class="type-name">伪人</div>
+          <div class="type-desc">场景适应能力很强，面对不同人会切换状态。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">POOR</div>
+          <div class="type-name">贫困者</div>
+          <div class="type-desc">聚焦感强，不重要的事情容易直接降噪处理。</div>
+        </a>
+
+        <a class="type-card" href="#">
+          <div class="type-code">ZZZZ</div>
+          <div class="type-name">装死者</div>
+          <div class="type-desc">平时能拖就拖，但死线一到会突然启动。</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section card">
+      <div class="section-head">
+        <h2>这页怎么继续扩展</h2>
+        <p>你接下来最适合做的，不是再加 FAQ，而是继续把这些入口变成真正详情页。</p>
+      </div>
+
+      <div class="note-box">
+        建议优先补这 4 个页面：<strong>CTRL、BOSS、THIN-K、MUM</strong>。<br />
+        原因很简单：这几个名字更好理解，也更适合作为首页和结果页的第一批内链页面。<br /><br />
+        等这几个详情页做完之后，再从这个总览页继续往外扩，整站结构就会明显更完整。
+      </div>
+
+      <div class="bottom-links">
+        <a href="/index.html">返回 SBTI 测试首页</a>
+        <a href="/sbti-vs-mbti.html">查看 SBTI 和 MBTI 区别</a>
+        <a href="/types/ctrl.html">进入 CTRL 人格详情</a>
+        <a href="/types/boss.html">进入 BOSS 人格详情</a>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>本页为 SBTI 人格类型总览页，用于展示主要人格入口与站内导航结构。</p>
+      <p>测试结果与具体人格类型仍以首页答题后的实际匹配结果为准。</p>
+    </div>
+  </div>
+</body>
+</html>
