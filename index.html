@@ -927,7 +927,13 @@ span.declare {
   padding: 18px;
   background: linear-gradient(180deg, #ffffff, #fbfdfb);
 }
-.type-preview-card a { text-decoration: none; }
+.type-preview-card strong {
+  text-decoration: none;
+}
+
+.type-preview-card:hover strong {
+  text-decoration: underline;
+}
 .type-preview-card strong {
   display: block;
   font-size: 20px;
